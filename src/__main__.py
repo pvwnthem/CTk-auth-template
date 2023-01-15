@@ -6,13 +6,14 @@ import tinydb
 
 x = tinydb.TinyDB("db.json")
 User = tinydb.Query()
+
 instances = {"gui": gui.Gui, "splash_screen": splash_screen.Splash, "login": login.Login, "register": register.Register, "db": x}
 
 
 
 
 
-if x.search(User.username.exists()) == [] :
+if x.search(User.token.exists()) == [] :
     z = instances["register"](harvest(), instances)
     z.mainloop()
     
