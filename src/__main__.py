@@ -15,14 +15,15 @@ print(x.search(User.username.exists()))
 if x.search(User.username.exists()) == []:
     z = instances["register"](harvest(), instances)
     z.mainloop()
-    if z.DONE:
-        z.destroy()
-        instances["login"](instances).mainloop()
+    
     
 
 
 else:
-    instances["login"](instances).mainloop()
+    z = instances["login"](instances)
+    z.mainloop()
+    
+
 
 
 

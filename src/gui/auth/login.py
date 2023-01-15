@@ -10,6 +10,7 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
 
     WIDTH = 780 # The size of the window
     HEIGHT = 520 # The size of the window 
+   
 
     def __init__(self, instances): # The constructor of the class
         super().__init__() # Call the super class constructor
@@ -34,6 +35,14 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
 
         login_button = ctk.CTkButton(master=self, text="Login", width=240, height=40, command=lambda: self.login(username_entry.get(), password_entry.get()))
         login_button.place(relx=0.5, rely=0.55, anchor=tk.CENTER)
+
+        back_button = ctk.CTkButton(master=self, text="Dont have an account?", width=240, height=40, command=lambda: self.back())
+        back_button.place(relx=0.5, rely=0.65, anchor=tk.CENTER)
+    
+    def back(self):
+        self.instances["register"](self, self.instances).mainloop()
+        self.instances["db"].truncate()
+        self.destroy()
 
     def login(self, username, password):
         x = requests.post('http://localhost:8080/auth/login', data={'username': username, 'password': password})

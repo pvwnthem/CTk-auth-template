@@ -12,7 +12,6 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
     WIDTH = 780 # The size of the window
     HEIGHT = 520 # The size of the window 
     HWID = ""
-    DONE = False
 
     def __init__(self, hwid, instances): # The constructor of the class
         super().__init__() # Call the super class constructor
@@ -53,7 +52,9 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
             print(x.json())
             User = tinydb.Query()
             self.instances["db"].insert(x.json())
-            self.DONE = True
+            self.instances["login"](self, self.instances).mainloop()
+            self.destroy()
+            
             
         else:
             mbox.showinfo("Register", "Register Failed, Please Try Again")
