@@ -2,20 +2,21 @@ import customtkinter as ctk
 import tkinter as tk
 import tkinter.messagebox as mbox
 
-ctk.set_apperance_mode("Dark")
-ctk.set_default_color_theme("blue")
+ctk.set_apperance_mode("Dark") # Set the apperance mode to dark
+ctk.set_default_color_theme("blue") # Set the default color theme to blue
 
 
-class Gui(ctk.CTk):
+class Gui(ctk.CTk): # The class that will be the main window of the application
 
-    WIDTH = 780
-    HEIGHT = 520
+    WIDTH = 780 # The size of the window
+    HEIGHT = 520 # The size of the window 
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self): # The constructor of the class
+        super().__init__() # Call the super class constructor
 
-        self.title("Person Generator And Manager By @pvwn")
-        self.geometry(f"{self.WIDTH}x{self.HEIGHT}")
+        self.title("Person Generator And Manager By @pvwn") # Set the title of the window
+        self.geometry(f"{self.WIDTH}x{self.HEIGHT}") # Set the size of the window
+        self.protocol("WM_DELETE_WINDOW", self.on_closing) # When the user clicks the X button on the window
 
 
 
