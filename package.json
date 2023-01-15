@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pvwnthem/persongenerator/issues"
   },
-  "homepage": "https://github.com/pvwnthem/persongenerator#readme"
+  "homepage": "https://github.com/pvwnthem/persongenerator#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
