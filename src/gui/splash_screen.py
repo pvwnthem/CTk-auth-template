@@ -11,6 +11,7 @@ class Gui(ctk.CTk): # The class that will be the main window of the application
 
     WIDTH = 780 # The size of the window
     HEIGHT = 520 # The size of the window 
+    USER = ""
 
     def __init__(self): # The constructor of the class
         super().__init__() # Call the super class constructor
@@ -19,7 +20,7 @@ class Gui(ctk.CTk): # The class that will be the main window of the application
         self.geometry(f"{self.WIDTH}x{self.HEIGHT}") # Set the size of the window
         #self.protocol("WM_DELETE_WINDOW", self.on_closing) # When the user clicks the X button on the window
 
-        text="Welcome {user}!" 
+        text=f"Welcome {self.USER}!" 
 
         label = ctk.CTkLabel(master=self, text="" , font=("Arial", 20), text_color="#2273f5")
         label.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
