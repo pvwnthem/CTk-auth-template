@@ -27,3 +27,5 @@ router.post("/", async (req, res) => {
     res.status(500).send(err);
     }
     });
+
+export default router;
