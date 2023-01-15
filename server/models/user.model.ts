@@ -19,7 +19,26 @@ const userSchema = new mongoose.Schema({
         required: false,
         default: false
 
-    }
+    },
+    hwid: {
+        type: String,
+        required: true
+    },
+    banned: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    banreason: {
+        type: String,
+        required: false,
+        default: 'None'
+    },
+    
+
+    
+    
+
 
     
     
