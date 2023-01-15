@@ -15,7 +15,8 @@ class Gui(ctk.CTk):
         super().__init__()
 
         self.title("Person Generator And Manager By @pvwn")
+        self.geometry(f"{self.WIDTH}x{self.HEIGHT}")
 
-        
+
 
 
