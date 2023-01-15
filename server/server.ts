@@ -1,11 +1,15 @@
 import express from 'express';
 import invite from './routes/invite';
 import crypto from 'crypto';
+import bodyparser from 'body-parser';
+
 import register from './routes/auth/register';
 const app = express();
 const port = 8080; // default port to listen
 
 // define a route handler for the default home page
+app.use(bodyparser.json())
+app.use(bodyparser.urlencoded({ extended: true }))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
