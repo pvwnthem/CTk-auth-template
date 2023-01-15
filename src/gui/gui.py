@@ -22,8 +22,7 @@ class Gui(ctk.CTk): # The class that will be the main window of the application
 
 
          # configure grid layout (4x4)
-        User = tinydb.Query()
-        print(jwt.decode(self.instances["db"].search(User.token.exists())[0]["token"], "NATEHIGGERS", algorithms=["HS256"]))
+        
 
 
         self.grid_columnconfigure(1, weight=1)
