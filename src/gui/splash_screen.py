@@ -31,6 +31,18 @@ class Gui(ctk.CTk): # The class that will be the main window of the application
             self.update()
             time.sleep(0.25)
         
+        text="Getting Things Ready..." 
+
+        label = ctk.CTkLabel(master=self, text="" , font=("Arial", 12), text_color="#2273f5")
+        label.place(relx=0.5, rely=0.55, anchor=tk.CENTER)
+        
+        out = ""
+        for letter in text:
+            out += letter 
+            label.configure(text=out)
+            self.update()
+            time.sleep(0.1)
+        
 
         
 
