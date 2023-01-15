@@ -14,7 +14,9 @@ x = instances["sql"]('data.db')
 x.create_table('data', 'token text')
 
 if x.select('data', 'token') == []:
-    instances["register"](harvest())
+    instances["register"](harvest()).mainloop()
+else:
+    instances["login"]().mainloop()
 
 
 
