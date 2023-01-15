@@ -11,8 +11,9 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
     WIDTH = 780 # The size of the window
     HEIGHT = 520 # The size of the window 
 
-    def __init__(self): # The constructor of the class
+    def __init__(self, instances): # The constructor of the class
         super().__init__() # Call the super class constructor
+        self.instances = instances
 
         self.title("Logger By @pvwn") # Set the title of the window
         self.geometry(f"{self.WIDTH}x{self.HEIGHT}") # Set the size of the window
