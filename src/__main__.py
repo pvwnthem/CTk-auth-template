@@ -21,7 +21,7 @@ if x.search(User.token.exists()) == [] :
 
 
 if x.search(User.token.exists()) != []:
-    z = instances["login"](instances)
+    z = instances["splash_screen"](instances)
     z.mainloop()
 
 else:

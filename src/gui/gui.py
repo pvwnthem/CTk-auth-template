@@ -1,6 +1,8 @@
 import customtkinter as ctk
 import tkinter as tk
 import tkinter.messagebox as mbox
+import tinydb
+import jwt
 
 ctk.set_appearance_mode("Dark") # Set the apperance mode to dark
 ctk.set_default_color_theme("blue") # Set the default color theme to blue
@@ -20,6 +22,10 @@ class Gui(ctk.CTk): # The class that will be the main window of the application
 
 
          # configure grid layout (4x4)
+        User = tinydb.Query()
+        print(jwt.decode(self.instances["db"].search(User.token.exists())[0]["token"], "NATEHIGGERS", algorithms=["HS256"]))
+
+
         self.grid_columnconfigure(1, weight=1)
         self.grid_columnconfigure((2, 3), weight=0)
         self.grid_rowconfigure((0, 1, 2), weight=1)
