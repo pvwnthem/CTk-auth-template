@@ -2,3 +2,4 @@ tkinter
 customtkinter 
 requests
 tinydb
+pyjwt
