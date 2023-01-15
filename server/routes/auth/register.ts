@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs';
 mongoose.connect(process.env.MONGO_URI!)
 
 const router = express.Router();
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
     const { username, password, invite } = req.body
     console.log(req.body)
