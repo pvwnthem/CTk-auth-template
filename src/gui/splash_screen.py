@@ -52,8 +52,3 @@ class Gui(ctk.CTk): # The class that will be the main window of the application
 
 
 
-
-
-if __name__ == "__main__":
-    gui = Gui() # Create an instance of the Gui class
-    gui.mainloop() # Start the mainloop of the application
