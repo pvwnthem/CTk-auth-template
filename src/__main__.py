@@ -10,9 +10,12 @@ instances = {"gui": gui.Gui, "splash_screen": splash_screen.Splash, "login": log
 
 
 
-x = instances["sql"]('data.db')
-x.create_table('data', 'token text')
-print(x.select('data', 'token'))
+sql = instances["sql"]('data.db')
+sql.create_table('data', 'token text')
+
+if sql.select('data', 'token') == []:
+    reg = instances["register"]()
+    reg.HWID = harvest()
 
 
 

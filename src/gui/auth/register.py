@@ -13,9 +13,8 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
     HEIGHT = 520 # The size of the window 
     HWID = ""
 
-    def __init__(self, hwid): # The constructor of the class
+    def __init__(self): # The constructor of the class
         super().__init__() # Call the super class constructor
-        self.HWID = hwid
 
         self.title("Logger By @pvwn") # Set the title of the window
         self.geometry(f"{self.WIDTH}x{self.HEIGHT}") # Set the size of the window
