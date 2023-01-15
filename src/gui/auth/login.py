@@ -1,6 +1,7 @@
 import customtkinter as ctk
 import tkinter as tk
 import tkinter.messagebox as mbox
+import requests
 ctk.set_appearance_mode("Dark") # Set the apperance mode to dark
 ctk.set_default_color_theme("blue") # Set the default color theme to blue
 
@@ -33,7 +34,8 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
         login_button = ctk.CTkButton(master=self, text="Login", width=240, height=40, command=lambda: self.login(username_entry.get(), password_entry.get()))
         login_button.place(relx=0.5, rely=0.55, anchor=tk.CENTER)
 
-
+    def login(self, username, password):
+        requests.get
 
 if __name__ == "__main__":
     gui = Login()
