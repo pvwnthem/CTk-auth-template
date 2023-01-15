@@ -2,7 +2,7 @@ import customtkinter as ctk
 import tkinter as tk
 import tkinter.messagebox as mbox
 import requests
-
+import tinydb
 ctk.set_appearance_mode("Dark") # Set the apperance mode to dark
 ctk.set_default_color_theme("blue") # Set the default color theme to blue
 
@@ -12,6 +12,7 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
     WIDTH = 780 # The size of the window
     HEIGHT = 520 # The size of the window 
     HWID = ""
+    DONE = False
 
     def __init__(self, hwid, instances): # The constructor of the class
         super().__init__() # Call the super class constructor
@@ -50,7 +51,9 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
         if x.status_code == 200:
             mbox.showinfo("Register", "Register Successful, Please Login")
             print(x.json())
-            self.instances["db"].set("name", x.json()["username"])
+            User = tinydb.Query()
+            self.instances["db"].insert(x.json())
+            self.DONE = True
             
         else:
             mbox.showinfo("Register", "Register Failed, Please Try Again")
