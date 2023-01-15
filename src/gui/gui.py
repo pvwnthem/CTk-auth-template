@@ -10,5 +10,12 @@ class Gui(ctk.CTk):
 
     WIDTH = 780
     HEIGHT = 520
-    
+
+    def __init__(self):
+        super().__init__()
+
+        self.title("Person Generator And Manager By @pvwn")
+
+        
+
 
