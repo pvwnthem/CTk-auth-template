@@ -19,5 +19,14 @@ class Gui(ctk.CTk): # The class that will be the main window of the application
         self.protocol("WM_DELETE_WINDOW", self.on_closing) # When the user clicks the X button on the window
 
 
+         # configure grid layout (4x4)
+        self.grid_columnconfigure(1, weight=1)
+        self.grid_columnconfigure((2, 3), weight=0)
+        self.grid_rowconfigure((0, 1, 2), weight=1)
+
+
+        # create sidebar with widgets
+
+
 
 
