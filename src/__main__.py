@@ -16,6 +16,7 @@ if x.search(User.username.exists()) == []:
     z = instances["register"](harvest(), instances)
     z.mainloop()
     if z.DONE:
+        z.destroy()
         instances["login"](instances).mainloop()
     
 
