@@ -64,7 +64,7 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
             
             
         else:
-            mbox.showinfo("Register", "Register Failed, Please Try Again")
+            mbox.showinfo("Register", "Register Failed, Most likely due to an invalid invite code, Please Try Again")
 
 
         
