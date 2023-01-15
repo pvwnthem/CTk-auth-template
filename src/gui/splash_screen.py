@@ -1,7 +1,8 @@
 import customtkinter as ctk
 import tkinter as tk
 import tkinter.messagebox as mbox
-
+from tkinter.ttk import Progressbar
+import time
 ctk.set_appearance_mode("Dark") # Set the apperance mode to dark
 ctk.set_default_color_theme("blue") # Set the default color theme to blue
 
@@ -18,9 +19,22 @@ class Gui(ctk.CTk): # The class that will be the main window of the application
         self.geometry(f"{self.WIDTH}x{self.HEIGHT}") # Set the size of the window
         #self.protocol("WM_DELETE_WINDOW", self.on_closing) # When the user clicks the X button on the window
 
-        label = ctk.CTkLabel(master=self, text="Welcome" , font=("Arial", 20))
-        label.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+        text="Welcome {user}!" 
 
+        label = ctk.CTkLabel(master=self, text="" , font=("Arial", 20), text_color="#2273f5")
+        label.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+        
+        out = ""
+        for letter in text:
+            out += letter 
+            label.configure(text=out)
+            self.update()
+            time.sleep(0.25)
+        
+
+        
+
+        
 
 
 
