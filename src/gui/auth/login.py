@@ -2,6 +2,7 @@ import customtkinter as ctk
 import tkinter as tk
 import tkinter.messagebox as mbox
 import requests
+import tinydb
 ctk.set_appearance_mode("Dark") # Set the apperance mode to dark
 ctk.set_default_color_theme("blue") # Set the default color theme to blue
 
@@ -50,6 +51,11 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
         print(x.status_code)
         if x.status_code == 200:
             mbox.showinfo("Login", "Login Successful")
+            self.instances["db"].truncate()
+            self.instances["db"].insert({"token", x.json()["token"]})
+            self.destroy()
+            User = tinydb.Query()
+            self.instances["gui"](self, self.instances).mainloop()
         else:
             mbox.showinfo("Login", "Login Failed")
 
