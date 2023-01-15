@@ -40,10 +40,11 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
         back_button.place(relx=0.5, rely=0.65, anchor=tk.CENTER)
     
     def back(self):
-        self.instances["register"](self, self.instances).mainloop()
         self.instances["db"].truncate()
         self.destroy()
-
+        self.instances["register"](self, self.instances).mainloop()
+        
+        
     def login(self, username, password):
         x = requests.post('http://localhost:8080/auth/login', data={'username': username, 'password': password})
         print(x.status_code)

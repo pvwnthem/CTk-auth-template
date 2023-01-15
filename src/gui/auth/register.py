@@ -42,7 +42,13 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
 
         login_button = ctk.CTkButton(master=self, text="Register", width=240, height=40, command=lambda: self.register(username_entry.get(), password_entry.get(), invite_entry.get()))
         login_button.place(relx=0.5, rely=0.65, anchor=tk.CENTER)
-
+        back_button = ctk.CTkButton(master=self, text="Already have an account?", width=240, height=40, command=lambda: self.back())
+        back_button.place(relx=0.5, rely=0.65, anchor=tk.CENTER)
+    
+    def back(self):
+        self.destroy()
+        self.instances["login"]( self.instances).mainloop()
+        
     
     def register(self, username, password, invite):
         x = requests.post('http://localhost:8080/auth/register', data={'username': username, 'password': password,  'invite': invite, 'hwid': self.HWID})
@@ -52,8 +58,9 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
             print(x.json())
             User = tinydb.Query()
             self.instances["db"].insert(x.json())
-            self.instances["login"](self, self.instances).mainloop()
             self.destroy()
+            self.instances["login"]( self.instances).mainloop()
+            
             
             
         else:
