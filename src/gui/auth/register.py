@@ -28,7 +28,7 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
         password_label = ctk.CTkLabel(master=self, text="Password: ", font=("Arial", 12), text_color="#2273f5")
         password_label.place(relx=0.5, rely=0.4, anchor=tk.CENTER)
 
-        invite_label = ctk.CTkLabel(master=self, text="Invite Code: ", font=("Arial", 12), text_color="#2273f5")
+        invite_label = ctk.CTkLabel(master=self, show="*", text="Invite Code: ", font=("Arial", 12), text_color="#2273f5")
         invite_label.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
         invite_entry = ctk.CTkEntry(master=self, width=240)
@@ -37,7 +37,7 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
         username_entry = ctk.CTkEntry(master=self, width=240)
         username_entry.place(relx=0.5, rely=0.35, anchor=tk.CENTER)
 
-        password_entry = ctk.CTkEntry(master=self, width=240)
+        password_entry = ctk.CTkEntry(master=self, show="*", width=240)
         password_entry.place(relx=0.5, rely=0.45, anchor=tk.CENTER)
 
         login_button = ctk.CTkButton(master=self, text="Register", width=240, height=40, command=lambda: self.register(username_entry.get(), password_entry.get(), invite_entry.get()))

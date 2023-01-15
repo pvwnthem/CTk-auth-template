@@ -22,7 +22,7 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
         username_label = ctk.CTkLabel(master=self, text="Username: ", font=("Arial", 12), text_color="#2273f5")
         username_label.place(relx=0.5, rely=0.3, anchor=tk.CENTER)
 
-        password_label = ctk.CTkLabel(master=self, text="Password: ", font=("Arial", 12), text_color="#2273f5")
+        password_label = ctk.CTkLabel(master=self, show="*", text="Password: ", font=("Arial", 12), text_color="#2273f5")
         password_label.place(relx=0.5, rely=0.4, anchor=tk.CENTER)
 
         username_entry = ctk.CTkEntry(master=self, width=240)
