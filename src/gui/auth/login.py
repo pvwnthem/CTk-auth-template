@@ -1,8 +1,6 @@
 import customtkinter as ctk
 import tkinter as tk
 import tkinter.messagebox as mbox
-from tkinter.ttk import Progressbar
-import time
 ctk.set_appearance_mode("Dark") # Set the apperance mode to dark
 ctk.set_default_color_theme("blue") # Set the default color theme to blue
 
@@ -31,6 +29,9 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
 
         password_entry = ctk.CTkEntry(master=self, width=240)
         password_entry.place(relx=0.5, rely=0.45, anchor=tk.CENTER)
+
+        login_button = ctk.CTkButton(master=self, text="Login", width=240, height=40, command=lambda: self.login(username_entry.get(), password_entry.get()))
+        login_button.place(relx=0.5, rely=0.55, anchor=tk.CENTER)
 
 
 
