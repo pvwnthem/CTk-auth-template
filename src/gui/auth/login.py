@@ -43,11 +43,6 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
             mbox.showinfo("Login", "Login Failed")
 
 
-if __name__ == "__main__":
-    gui = Login()
-    gui.mainloop()
-        
-
         
 
         
