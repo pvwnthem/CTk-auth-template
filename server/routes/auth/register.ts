@@ -17,12 +17,15 @@ router.post('/', async (req, res) => {
     if (!inviteCode) {
     return res.status(400).send('Invalid invite code')
     }
+
     const user = await User.create({
     username: username,
     password: bcrypt.hashSync(password, 10),
     invitedwith: invite
     })
+    await inviteCode.delete()
     res.status(200).send(user)
+    
     } catch (err) {
     res.status(400).send(err)
     }
