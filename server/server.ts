@@ -1,5 +1,5 @@
 import express from 'express';
-
+import invite from './routes/invite';
 
 const app = express();
 const port = 8080; // default port to listen
@@ -8,6 +8,10 @@ const port = 8080; // default port to listen
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+
+app.use('/invite', invite )
+
 
 // start the Express server
 app.listen( port, () => {
