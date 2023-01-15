@@ -2,7 +2,6 @@ import customtkinter as ctk
 import tkinter as tk
 import tkinter.messagebox as mbox
 import requests
-import subprocess
 
 ctk.set_appearance_mode("Dark") # Set the apperance mode to dark
 ctk.set_default_color_theme("blue") # Set the default color theme to blue
@@ -12,9 +11,11 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
 
     WIDTH = 780 # The size of the window
     HEIGHT = 520 # The size of the window 
+    HWID = ""
 
-    def __init__(self): # The constructor of the class
+    def __init__(self, hwid): # The constructor of the class
         super().__init__() # Call the super class constructor
+        self.HWID = hwid
 
         self.title("Logger By @pvwn") # Set the title of the window
         self.geometry(f"{self.WIDTH}x{self.HEIGHT}") # Set the size of the window
@@ -44,7 +45,7 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
 
     
     def register(self, username, password, invite):
-        x = requests.post('http://localhost:8080/auth/register', data={'username': username, 'password': password,  'invite': invite})
+        x = requests.post('http://localhost:8080/auth/register', data={'username': username, 'password': password,  'invite': invite, 'hwid': self.HWID})
         print(x.status_code)
         if x.status_code == 200:
             mbox.showinfo("Register", "Register Successful, Please Login")
@@ -56,10 +57,3 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
 
         
 
-
-
-
-
-if __name__ == "__main__": # If this file is the main file
-    app = Register() # Create an instance of the class
-    app.mainloop() # Start the main loop
