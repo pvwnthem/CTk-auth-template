@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     password: bcrypt.hashSync(password, 10),
     invitedwith: invite
     })
-    await inviteCode.delete()
+    await Invite.deleteOne({ invite: invite })
     res.status(200).send(user)
     
     } catch (err) {

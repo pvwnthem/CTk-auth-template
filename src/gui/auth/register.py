@@ -37,16 +37,17 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
         password_entry = ctk.CTkEntry(master=self, width=240)
         password_entry.place(relx=0.5, rely=0.45, anchor=tk.CENTER)
 
-        login_button = ctk.CTkButton(master=self, text="Login", width=240, height=40, command=lambda: self.login(username_entry.get(), password_entry.get()))
+        login_button = ctk.CTkButton(master=self, text="Login", width=240, height=40, command=lambda: self.register(username_entry.get(), password_entry.get(), invite_entry.get()))
         login_button.place(relx=0.5, rely=0.65, anchor=tk.CENTER)
 
-    def login(self, username, password):
-        x = requests.post('http://localhost:8080/auth/login', data={'username': username, 'password': password})
+
+    def register(self, username, password, invite):
+        x = requests.post('http://localhost:8080/auth/register', data={'username': username, 'password': password,  'invite': invite})
         print(x.status_code)
         if x.status_code == 200:
-            mbox.showinfo("Login", "Login Successful")
+            mbox.showinfo("Register", "Register Successful, Please Login")
         else:
-            mbox.showinfo("Login", "Login Failed")
+            mbox.showinfo("Register", "Register Failed, Please Try Again")
 
 
         
