@@ -57,7 +57,6 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
             mbox.showinfo("Register", "Register Successful, Please Login")
             print(x.json())
             User = tinydb.Query()
-            self.instances["db"].insert(x.json())
             self.destroy()
             self.instances["login"]( self.instances).mainloop()
             
