@@ -16,7 +16,7 @@ class Gui(ctk.CTk): # The class that will be the main window of the application
     def __init__(self): # The constructor of the class
         super().__init__() # Call the super class constructor
 
-        self.title("Person Generator And Manager By @pvwn") # Set the title of the window
+        self.title("Logger By @pvwn") # Set the title of the window
         self.geometry(f"{self.WIDTH}x{self.HEIGHT}") # Set the size of the window
         #self.protocol("WM_DELETE_WINDOW", self.on_closing) # When the user clicks the X button on the window
 
