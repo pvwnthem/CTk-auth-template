@@ -35,7 +35,13 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
         login_button.place(relx=0.5, rely=0.55, anchor=tk.CENTER)
 
     def login(self, username, password):
-        requests.get
+        x = requests.post('http://localhost:8080/auth/login', data={'username': username, 'password': password})
+        print(x.status_code)
+        if x.status_code == 200:
+            mbox.showinfo("Login", "Login Successful")
+        else:
+            mbox.showinfo("Login", "Login Failed")
+
 
 if __name__ == "__main__":
     gui = Login()
