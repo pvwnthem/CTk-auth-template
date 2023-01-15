@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 mongoose.connect(process.env.MONGO_URI!)
 
 const router = express.Router();
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
     const { username, password } = req.body;
     if (!username || !password) {
