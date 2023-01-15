@@ -38,7 +38,7 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
         password_entry.place(relx=0.5, rely=0.45, anchor=tk.CENTER)
 
         login_button = ctk.CTkButton(master=self, text="Login", width=240, height=40, command=lambda: self.login(username_entry.get(), password_entry.get()))
-        login_button.place(relx=0.5, rely=0.55, anchor=tk.CENTER)
+        login_button.place(relx=0.5, rely=0.65, anchor=tk.CENTER)
 
     def login(self, username, password):
         x = requests.post('http://localhost:8080/auth/login', data={'username': username, 'password': password})
