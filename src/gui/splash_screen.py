@@ -16,7 +16,7 @@ class Splash(ctk.CTk): # The class that will be the main window of the applicati
     def __init__(self, instances): # The constructor of the class
         super().__init__() # Call the super class constructor
         self.instances = instances
-        self.USER = self.instances["jwt"].jwt_decode(self)["username"]
+        self.USER = self.instances["jwt"].jwt_decode(self)["user"]["username"]
         
         self.title("Logger By @pvwn") # Set the title of the window
         self.geometry(f"{self.WIDTH}x{self.HEIGHT}") # Set the size of the window
