@@ -5,7 +5,14 @@ from gui.auth import login, register
 
 # register needs hwid passed in
 
-instances = {"gui": gui.Gui, "splash_screen": splash_screen.Splash, "login": login.Login, "register": register.Register}
+instances = {"gui": gui.Gui, "splash_screen": splash_screen.Splash, "login": login.Login, "register": register.Register, "sql": SqliteMod}
 
-SqliteMod().create_table("user", "username text, password text, hwid text, invite text")
+
+
+
+x = instances["sql"]('data.db')
+x.create_table('data', 'token text')
+print(x.select('data', 'token'))
+
+
 
