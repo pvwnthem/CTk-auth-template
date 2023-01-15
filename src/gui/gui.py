@@ -7,4 +7,8 @@ ctk.set_default_color_theme("blue")
 
 
 class Gui(ctk.CTk):
+
+    WIDTH = 780
+    HEIGHT = 520
     
+
