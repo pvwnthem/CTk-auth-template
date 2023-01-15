@@ -50,6 +50,7 @@ class Register(ctk.CTk): # The class that will be the main window of the applica
         if x.status_code == 200:
             mbox.showinfo("Register", "Register Successful, Please Login")
             print(x.json())
+            self.instances["db"].set("name", x.json()["username"])
             
         else:
             mbox.showinfo("Register", "Register Failed, Please Try Again")
