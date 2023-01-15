@@ -1,0 +1,19 @@
+{
+  "name": "moonlogger",
+  "version": "1.0.0",
+  "description": "a logger",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pvwnthem/persongenerator.git"
+  },
+  "author": "pvwn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pvwnthem/persongenerator/issues"
+  },
+  "homepage": "https://github.com/pvwnthem/persongenerator#readme"
+}
