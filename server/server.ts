@@ -1,7 +1,7 @@
 import express from 'express';
 import invite from './routes/invite';
 import crypto from 'crypto';
-
+import register from './routes/auth/register';
 const app = express();
 const port = 8080; // default port to listen
 
@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }))
 
 
 app.use('/invite', invite )
-
+app.use( '/auth/register', register )
 
 // start the Express server
 app.listen( port, () => {
