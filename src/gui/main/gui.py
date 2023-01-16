@@ -14,4 +14,6 @@ class Gui:
         eel.start("index.html")
 
 
-    
+
+if __name__ == "__main__":
+    Gui({}).mainloop()

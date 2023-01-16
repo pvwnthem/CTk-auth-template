@@ -4,3 +4,34 @@
 .secondary {
     background-color: #333333;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #363636
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #2273f5;
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  .content {
+    
+        margin-top: 1.5rem/* 24px */;
+        margin-bottom: 1.5rem/* 24px */;
+        color: #2273f5
+    
+  }
+
+  .svg {
+    color: #2273f5
+  }

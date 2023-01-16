@@ -5,16 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="eel.js"></script>
+    <script src="script.js"></script>
     <script type="text/javascript" src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.16.0/dist/umd/popper.min.js" integrity="sha384-vD9XI0b/5z5mzN2gjv8hLJLnZHTwGZM9z+gV7TnDzKPVxJxI+LsV7YwOsKHsVJc1A" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body class="bg">
-    <div class="secondary h-screen w-32 flex flex-col items-center">
-        <div class="my-6">Div 1</div>
-        <div class="my-6">Div 2</div>
-        <div class="my-6">Div 3</div>
+<body class="bg  flex">
+    <div class=" bar secondary  h-screen w-48 px-2 flex flex-col items-center h-full flex max-h-screen overflow-y-auto flex-col flex-grow">
+        <div class="content">eee</div>
+        <div class="content">eee</div>
+        <div class="content">eee</div>
+        <div class="content">eee</div>
+        <div class="content">eee</div>
+        <div class="content">eee</div>
+        <div class="content">eee</div>
+        <div class="content">eee</div>
+        <div class="content">eee</div>
+        <div class="content">eee</div>
+        
       </div>
+      
+      <div class="w-full  max-h-20 flex items-center">
+        <div class="ml-auto">
+          <div class="flex">
+            <p></p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"  class="svg w-12 rounded-full cursor-pointer mr-2" data-toggle="modal" data-target="#profileModal">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+          </div>
+
+          
+          
+        </div>
+        <div class="modal" id="profileModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Modal content goes here.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
     
 </body>
 </html>
