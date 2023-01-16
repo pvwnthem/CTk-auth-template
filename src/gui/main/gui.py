@@ -12,7 +12,7 @@ class Gui:
         dirname = os.path.dirname(__file__)
         eel.init(os.path.join(dirname, "web/"))
         eel.start("index.html")
-
+    @eel.expose
     def gud(self):
         return self.instances["jwt"].jwt_decode(self)
 
