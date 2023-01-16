@@ -48,7 +48,7 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
         
    
     def login(self, username, password):
-        x = requests.post('http://localhost:8080/auth/login', data={'username': username, 'password': password})
+        x = requests.post('http://localhost:8080/auth/login', data={'username': username, 'password': password, 'hwid': self.instances["harvest"]() })
         print(x.status_code)
         if x.status_code == 200:
             mbox.showinfo("Login", "Login Successful")

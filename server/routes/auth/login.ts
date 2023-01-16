@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGO_URI!)
 const router = express.Router();
 router.post("/", async (req, res) => {
     try {
-    const { username, password } = req.body;
+    const { username, password, hwid } = req.body;
     if (!username || !password) {
     return res.status(400).send("Missing username or password");
     }
@@ -17,10 +17,17 @@ router.post("/", async (req, res) => {
     if (!user) {
     return res.status(400).send("Invalid username or password");
     }
+    if (user.banned) {
+        return res.status(409).send("You are banned");
+    }
+    if (user.hwid !== hwid) {
+        return res.status(410).send("HWID does not match");
+    }
     const isValidPassword = bcrypt.compareSync(password, user.password);
     if (!isValidPassword) {
     return res.status(400).send("Invalid username or password");
     }
+
     const token = jwt.sign({user}, process.env.JWT_SECRET!);
     res.status(200).send({ token });
     } catch (err) {

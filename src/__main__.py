@@ -9,7 +9,7 @@ import tinydb
 x = tinydb.TinyDB("db.json")
 User = tinydb.Query()
 
-instances = {"gui": gui.Gui, "splash_screen": splash_screen.Splash, "login": login.Login, "register": register.Register, "db": x, "jwt": Jwt}
+instances = {"gui": gui.Gui, "splash_screen": splash_screen.Splash, "login": login.Login, "register": register.Register, "db": x, "jwt": Jwt, "harvest": harvest}
 
 
 
