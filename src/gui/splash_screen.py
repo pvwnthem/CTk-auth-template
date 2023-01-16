@@ -48,7 +48,7 @@ class Splash(ctk.CTk): # The class that will be the main window of the applicati
         
         time.sleep(1)
         self.destroy()
-        self.instances["gui"](self.instances).mainloop()
+        self.instances["main"](self.instances)
         
 
         
