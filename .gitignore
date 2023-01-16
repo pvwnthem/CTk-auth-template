@@ -3,3 +3,6 @@ node_modules
 *.pyc
 *.db
 db.json
+build
+dist
+*.spec
