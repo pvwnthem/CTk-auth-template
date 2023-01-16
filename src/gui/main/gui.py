@@ -11,7 +11,7 @@ def mainloop(instances):
     eel.init(os.path.join(dirname, "web/"))
     @eel.expose
     def gud():
-        return instances["jwt"]().jwt_decode()
+        return instances["jwt"](instances).jwt_decode()
         
     eel.start("index.html")
     
