@@ -1,5 +1,6 @@
 from utils.harvesthwid import harvest
-from gui import gui, splash_screen
+from gui import  splash_screen
+from gui.main import gui
 from gui.auth import login, register
 from utils.jwt import Jwt
 import tkinter
