@@ -13,6 +13,8 @@ class Gui:
         eel.init(os.path.join(dirname, "web/"))
         eel.start("index.html")
 
+    def gud(self):
+        return self.instances["jwt"].jwt_decode(self)
 
 
 if __name__ == "__main__":
