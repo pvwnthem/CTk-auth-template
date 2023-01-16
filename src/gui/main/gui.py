@@ -14,7 +14,7 @@ class Gui:
         eel.start("index.html")
     @eel.expose
     def gud(self):
-        return self.instances["jwt"].jwt_decode(self)
+        return self.instances["jwt"]().jwt_decode(self)
 
 
 if __name__ == "__main__":
