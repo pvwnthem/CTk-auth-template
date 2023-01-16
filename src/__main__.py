@@ -2,7 +2,11 @@ from utils.harvesthwid import harvest
 from gui import gui, splash_screen
 from gui.auth import login, register
 from utils.jwt import Jwt
-
+import tkinter
+import customtkinter 
+import requests
+import tinydb
+import jwt
 import tinydb
 # register needs hwid passed in
 

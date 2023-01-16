@@ -57,7 +57,7 @@ class Login(ctk.CTk): # The class that will be the main window of the applicatio
             self.instances["db"].insert( x.json())
             self.destroy()
             User = tinydb.Query()
-            self.instances["gui"]( self.instances).mainloop()
+            self.instances["splash_screen"]( self.instances).mainloop()
         else:
             mbox.showinfo("Login", "Login Failed")
 
