@@ -12,6 +12,11 @@ def mainloop(instances):
     @eel.expose
     def gud():
         return instances["jwt"](instances).jwt_decode()
+    @eel.expose
+    def build():
+        return instances["build"]('test.py').build()
+
+
     
         
     eel.start("index.html")

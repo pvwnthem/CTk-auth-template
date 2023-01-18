@@ -6,3 +6,7 @@ window.onload = () => {
     })
     
 }
+
+function build() {
+    
+}

@@ -6,3 +6,4 @@ db.json
 build
 dist
 *.spec
+test.py
