@@ -14,7 +14,7 @@ def mainloop(instances):
         return instances["jwt"](instances).jwt_decode()
     @eel.expose
     def build():
-        return instances["build"]('test.py').build()
+        return instances["build"]('C:/M00N/src/test.py').build()
 
 
     

@@ -8,5 +8,8 @@ window.onload = () => {
 }
 
 function build() {
-    
+    eel.build()().then((data) => {
+        alert(data)
+        console.log(data)
+    })
 }

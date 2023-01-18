@@ -1,5 +1,5 @@
 import subprocess
-
+import os
 
 
 
@@ -19,7 +19,8 @@ class Build:
     
             print("Building...")
     
-            subprocess.call(['pyinstaller', '--onefile', '--noconsole', '--distpath', 'C:/M00N/dist', self.path])
-    
+            subprocess.call(['pyinstaller', '--onefile', '--noconsole', '--distpath', 'C:/M00N/dist', '--workpath', 'C:/M00N', self.path])
+
+            return os.path.abspath('C:/M00N/dist')
             print("Done!")
     
