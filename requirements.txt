@@ -3,3 +3,8 @@ requests
 tinydb
 pyjwt
 eel
+sqlite3
+win32crypt
+Crypto
+shutil
+base64
