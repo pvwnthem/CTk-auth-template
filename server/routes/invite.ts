@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_URI!)
 
 const router = express.Router();
 
-router.get('/validate', async (req, res) => {
+router.get('/validate', async (req: any, res: any) => {
     const invite = req.query.invite
     if (!invite) {
         res.status(400).send('No invite code provided')
